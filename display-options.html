@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<style type="text/css">
+			#theDiv {
+				margin: 10px;
+				padding: 5px;
+				background: #cc0000;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Web Yerleşim Temelleri</h1>
+		<p>Gökalp Gürbüzer ile </p>
+		<div>Merhaba <div id="theDiv">GÜZEL</div> Dünya !!</div>
+
+		<hr />
+		<label for="selDisplay">display: </label>
+		<select id="selDisplay" onchange="displayValueChanged">
+			<option selected>inherit</option>
+			<option>block</option>
+			<option>inline</option>
+			<option>flex</option>
+			<option>none</option>
+		</select>
+
+			<script type="text/javascript">
+			var displayValueChanged = function(event) {
+				var selDisplay = event.target
+				if (!!selDisplay) {
+					if (!!selDisplay.value) {
+						document.querySelector('#theDiv').setAttribute('style', `display: ${selDisplay.value}`);
+					}
+				}
+			}
+			document.addEventListener('DOMContentLoaded',function() {
+    			document.querySelector('#selDisplay').onchange = displayValueChanged;
+			}, false);
+		</script>		
+	</body>
+</html>
