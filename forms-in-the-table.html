@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>HTML Formingen</title>
+	</head>
+	<body>
+		<h1>Web Yerleşim Temelleri</h1>
+		<h2>HTML Formları</h2>
+		<hr />
+		<div>
+			<p>HTML form örneği</p>
+			<form method="POST" action="http://localhost:8080/go-form">
+				<table>
+					<tr>
+						<th><label for="name">Adı : </label></th><td><input type="text" id="name" name="name" /></td>
+					</tr>
+					<tr>
+						<th><label for="birthdate">Doğum Tarihi : </label></th><td><input type="date" name="birthdate" id="birthdate"></td>
+					</tr>
+					<tr>
+						<th><label>Cinsiyet : </label></th>
+						<td>
+							<label for="male">Erkek</label><input type="radio" id="male" name="sex" value="M" />
+							<label for="female">Kadın</label><input type="radio" id="female" name="sex" value="F" />
+							<label for="sexNotDisclosed">Yanıt vermemeyi trecih ediyorum</label><input type="radio" id="sexNotDisclosed" name="sex" value="O" />
+						</td>
+					</tr>
+					<tr>
+						<th><label for="bio">Hikayesi</label></th><td><textarea cols="40" rows="6" id="bio" name="bio"></textarea></td>
+					</tr>
+					<tfoot>
+					<tr>
+						<td colspan="2">
+							<input type="reset" value="Sıfırla">
+							<input type="submit" name="save" value="Kaydet" />
+							<input type="submit" name="save" value="Kaydet ama emin de değilim" />
+						</td>
+					</tr>						
+					</tfoot>
+				</table>				
+			</form>
+		</div>
+	</body>
+</html>
