@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title>CSS Beyaz Boşluk Özellikleri</title>
+		<style>
+			pre {
+				padding: 5px 0px;
+			}
+
+			pre:hover {
+				background: rgba(250, 150, 0, 0.1);
+				cursor: hand;
+			}
+
+			td {
+				border-bottom: 1px solid #ccc;
+			}
+
+			.normal td {
+				white-space: normal;
+			}
+
+			.nowrap td {
+				white-space: nowrap;
+			}
+
+			.pre td {
+				white-space: pre;
+			}
+
+			.pre-wrap td {
+				white-space: pre-wrap;
+			}
+
+			.pre-line td {
+				white-space: pre-line;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<h1>CSS Beyaz Boşluk Özellikleri</h1>
+			<h2>Dümdüz Metin (1)</h2>
+	<pre id="pre1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget urna quam. Mauris eu tempus odio. In scelerisque aliquam interdum. Quisque sem augue, rhoncus sit amet rhoncus feugiat, congue eu est. Morbi vel dolor eget massa pulvinar iaculis vel eu ligula. In quis vehicula est, sit amet ultricies tortor. Morbi lobortis orci at sem dictum, eget interdum justo elementum. Aliquam erat volutpat. Nulla facilisi. Cras consequat mi ut ipsum elementum fringilla. Phasellus nisi turpis, efficitur at interdum ut, congue eu quam. Donec diam lorem, euismod interdum eros accumsan, porta ornare nibh. Morbi pharetra nulla in tincidunt sollicitudin.</pre>
+			<h2>Satır Sonlu Metin (2)</h2>
+	<pre id="pre2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget urna quam. Mauris eu tempus odio. 
+	In scelerisque aliquam interdum. Quisque sem augue, rhoncus sit amet rhoncus feugiat, congue eu est. 
+	Morbi vel dolor eget massa pulvinar iaculis vel eu ligula. In quis vehicula est, sit amet ultricies tortor. 
+	Morbi lobortis orci at sem dictum, eget interdum justo elementum. Aliquam erat volutpat. Nulla facilisi. 
+	Cras consequat mi ut ipsum elementum fringilla. Phasellus nisi turpis, efficitur at interdum ut, congue eu quam. 
+	Donec diam lorem, euismod interdum eros accumsan, porta ornare nibh. Morbi pharetra nulla in tincidunt sollicitudin.</pre>	
+			<h2>Hem Satır Sonlu Hem Bol Boşluklu Metin (3)</h2>
+	<pre id="pre3">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget urna quam. Mauris eu tempus odio. 
+		In scelerisque aliquam interdum. Quisque sem augue, rhoncus sit amet rhoncus feugiat, congue eu est. 
+		Morbi vel dolor eget massa pulvinar iaculis vel eu ligula. 
+				In quis vehicula est, sit amet ultricies tortor. Morbi lobortis orci at sem dictum, eget interdum justo elementum. 
+			Aliquam erat volutpat. Nulla facilisi. Cras consequat mi ut ipsum elementum fringilla. Phasellus nisi turpis, 
+	efficitur at interdum ut, congue eu quam. Donec diam lorem, euismod interdum eros accumsan, porta ornare nibh. 
+	Morbi pharetra nulla in tincidunt sollicitudin.
+	</pre>
+			<table>
+				<thead>
+					<tr>
+						<th>Değer</th>
+						<th>Boşlukları Koru</th>
+						<th>"Hard" Satır Sonları</th>
+						<th>"Soft" Satır Sonları</th>
+						<th>Sonuç</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="normal">
+						<td>normal</td>
+						<td>&times;</td>
+						<td>Diğer Boşluklardan Farkı Yok</td>
+						<td>&check;</td>
+						<td class="value"></td>
+					</tr>
+					<tr class="nowrap">
+						<td>nowrap</td>
+						<td>&times;</td>
+						<td>&times;</td>
+						<td>&check;</td>
+						<td class="value"></td>
+					</tr>
+					<tr class="pre">
+						<td>pre</td>
+						<td>&check;</td>
+						<td>&check;</td>
+						<td>&times;</td>
+						<td class="value"></td>
+					</tr>
+					<tr class="pre-wrap">
+						<td>pre-wrap</td>
+						<td>&check;</td>
+						<td>&check;</td>
+						<td>&check;</td>
+						<td class="value"></td>
+					</tr>
+					<tr class="pre-line">
+						<td>pre-line</td>
+						<td>&times;</td>
+						<td>&check;</td>
+						<td>&check;</td>
+						<td class="value"></td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+			<p>Tıkla bir pre üstüne, sonuç istiyorsan görmek!?</p>
+		<div> <!-- #content -->
+
+		<script type="text/javascript">
+			var onPreClick = function(event) {
+				var pre = event.target
+				if (!!pre) {
+					var tds = document.querySelectorAll('.value');
+					tds.forEach(td => {
+						while (td.hasChlidNodes) {
+							td.removeChild(td.lastChild);
+						}
+						td.innerText = pre.innerText;
+					});
+				}
+			}
+			document.addEventListener('DOMContentLoaded',function() {
+    			document.querySelectorAll('pre').forEach(pre => pre.onclick = onPreClick);
+			}, false);
+		</script>
+	</body>
+</html>
