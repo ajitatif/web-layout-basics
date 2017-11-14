@@ -1,0 +1,14 @@
+@kipkirmizi: #c00;
+@tupturuncu: @kipkirmizi + #006400;
+@biClass: value;
+
+.rounded-border(@style) {
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border: 1px @style @tupturuncu;
+	padding: 3px;
+}
+
+.@{biClass}:hover {
+	.rounded-border(dashed);
+}
