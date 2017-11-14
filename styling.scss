@@ -1,7 +1,9 @@
+@import "colors";
+
 @mixin rounded-border($style) {
-	border-radius: 12 px;
-	-webkit-border-radius: 3px;
-	border: 1px $style #cc6400;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border: 1px $style $tupturuncu;
 	padding: 3px;
 }
 
