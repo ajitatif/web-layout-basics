@@ -1,0 +1,14 @@
+@mixin rounded-border($style) {
+	border-radius: 12 px;
+	-webkit-border-radius: 3px;
+	border: 1px $style #cc6400;
+	padding: 3px;
+}
+
+.value:hover {
+	@include rounded-border(dashed);
+}
+
+pre:hover {
+	@include rounded-border(solid);
+}
